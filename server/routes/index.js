@@ -12,10 +12,6 @@ router.post('/',
     })
 );
 
-router.post('/shelf', function (req,res){
-  console.log('in post to shelf:', req.body);
-});
-
 // Handle index file separately
 // Also catches any other request not explicitly matched elsewhere
 router.get('/', function(req, res) {
