@@ -17,5 +17,11 @@
           <a href="#register">Register</a>
       </div>
     </form>
-
+    <div class="container" ng-controller="shelfController as sc">
+      <div ng-repeat="item in sc.allItems">
+        {{item.userName}}
+        {{item.description}}
+        {{item.imgUrl}}
+      </div>
+    </div>
 </div>

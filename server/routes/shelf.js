@@ -52,4 +52,15 @@ router.get('/', function(req,res){
 });
 
 
+router.delete('/:id', function (req,res){
+  console.log("in delete shelf request", req.params.id);
+  Shelf.remove({_id:req.params.id}).then(function(){
+    res.sendStatus(200);
+
+
+  });
+});
+
+
+
 module.exports = router;
