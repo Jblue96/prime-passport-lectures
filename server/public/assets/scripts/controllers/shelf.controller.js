@@ -26,6 +26,7 @@ myApp.controller('shelfController', ['$http', '$location', function($http, $loca
     }).then(function(response){
       console.log('back from server get request with:', response);
       console.log('response.data-->', response.data);
+      vm.allItems = response.data;
     });
   };
 
