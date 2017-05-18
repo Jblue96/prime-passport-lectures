@@ -54,13 +54,13 @@ router.get('/', function(req,res){
 
 router.delete('/:id', function (req,res){
   console.log("in delete shelf request", req.params.id);
-  Shelf.remove({_id:req.params.id}).then(function(){
-    res.sendStatus(200);
-
-
-  });
+  if(req.isAuthenticated()) {
+    Shelf.remove({_id:req.params.id}).then(function(){
+      res.sendStatus(200);
+    });
+  } else {
+    res.send("not authorized to delete");
+  }
 });
-
-
 
 module.exports = router;
