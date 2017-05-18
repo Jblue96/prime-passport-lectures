@@ -15,11 +15,21 @@ myApp.controller('shelfController', ['$http', '$location', function($http, $loca
          data: objectToSend
        }).then (function(response){
          console.log('back from server:', response);
-         
+
        });
   };//end addShelfItem func
 
+  vm.getItems = function(){
+    $http({
+      method: 'GET',
+      url: '/shelf'
+    }).then(function(response){
+      console.log('back from server get request with:', response);
+      console.log('response.data-->', response.data);
+    });
+  };
 
+  vm.getItems();
 
 
 

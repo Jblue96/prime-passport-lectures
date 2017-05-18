@@ -43,4 +43,13 @@ router.post('/', function (req,res){
   }
 });
 
+router.get('/', function(req,res){
+  console.log('in get shelf request');
+  Shelf.find().then(function(data){
+    console.log('data-->', data);
+  });
+  res.send('hoot hoot');
+});
+
+
 module.exports = router;
